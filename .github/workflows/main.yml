@@ -8,7 +8,8 @@ on:
       - master
       
 env:
-  url: www.ya.ru
+  url: www.ya.ru/api/scans/upload
+  authheader: someheader
   
 jobs:
   tests:
@@ -30,5 +31,4 @@ jobs:
           sarif_file: results.sarif
       - name : ls files
         run : |
-          ls -la
-          cat results.sarif
+          echo 'curl --insecure -H \'Authorization: $authheader \' --data @results.sarif $url'
