@@ -31,4 +31,5 @@ jobs:
           sarif_file: results.sarif
       - name : ls files
         run : |
-          echo 'curl -i -X POST --insecure -H "Authorization: $authheader" --data "@results.sarif" $url'
+          echo 'curl -i -X POST --insecure -H "Authorization: ${{env.authheader}}" --data "@results.sarif" ${{env.url}}'
+          curl -i -X POST --insecure -H "Authorization: ${{env.authheader}}" --data "@results.sarif" ${{env.url}}
